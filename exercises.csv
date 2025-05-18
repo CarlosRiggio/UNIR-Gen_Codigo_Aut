@@ -1,0 +1,21 @@
+id,name,description,imc_range,difficulty,category,gender_specific,equipment_needed
+1,Flexiones de Pecho,Ejercicio de fuerza para el tren superior,Normal,Principiante,Fuerza,Any,
+2,Sentadillas,Ejercicio de fuerza para piernas y glúteos,Normal,Principiante,Fuerza,Any,
+3,Plancha Abdominal,Ejercicio isométrico para el core,Normal,Intermedio,Fuerza,Any,
+4,Correr Suave (Trote),Ejercicio cardiovascular de bajo impacto,Sobrepeso,Principiante,Cardio,Any,
+5,Elevaciones Laterales de Hombros,Ejercicio para deltoides,Bajo Peso,Principiante,Fuerza,Any,Mancuernas Pequeñas
+6,Curl de Bíceps con Mancuernas,Ejercicio para bíceps,Bajo Peso,Principiante,Fuerza,Any,Mancuernas
+7,Caminata Rápida,Ejercicio cardiovascular moderado,Obesidad,Principiante,Cardio,Any,
+8,Zancadas (Lunges),Ejercicio para piernas y glúteos,Normal,Intermedio,Fuerza,Any,
+9,Burpees,Ejercicio compuesto de cuerpo completo,Normal,Avanzado,Cardio,Any,
+10,Remo con Mancuerna,Ejercicio de espalda y bíceps,Bajo Peso,Intermedio,Fuerza,Any,Mancuerna,Banco (opcional)
+11,Prensa de Hombros con Mancuernas,Ejercicio de hombros,Bajo Peso,Intermedio,Fuerza,Any,Mancuernas
+12,Saltos de Tijera (Jumping Jacks),Calentamiento cardiovascular,Sobrepeso,Principiante,Cardio,Any,
+13,Bicicleta Estática,Ejercicio cardiovascular de bajo impacto,Obesidad,Principiante,Cardio,Any,Bicicleta Estática
+14,Estiramiento de Isquiotibiales,Estiramiento para la parte posterior de las piernas,Normal,Principiante,Flexibilidad,Any,
+15,Estiramiento de Cuádriceps,Estiramiento para la parte frontal de los muslos,Normal,Principiante,Flexibilidad,Any,
+16,Sentadilla Sumo,Variación de sentadilla para aductores y glúteos,Bajo Peso,Intermedio,Fuerza,Any,Pesa Rusa (opcional)
+17,Caminata Inclinada,Cardio con mayor intensidad para piernas,Sobrepeso,Intermedio,Cardio,Any,Cinta de correr
+18,Natación,Ejercicio de cuerpo completo de bajo impacto,Obesidad,Intermedio,Cardio,Any,Piscina
+19,Yoga para principiantes,Mejora flexibilidad y fuerza,Normal,Principiante,Flexibilidad,Any,Mat de yoga
+20,Pilates Mat,Fortalecimiento del core y flexibilidad,Normal,Intermedio,Fuerza,Any,Mat 

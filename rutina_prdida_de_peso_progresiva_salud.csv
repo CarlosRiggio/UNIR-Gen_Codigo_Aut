@@ -1,0 +1,4 @@
+id,name,description,imc_range,difficulty,category,gender_specific,equipment_needed
+7,Caminata Rápida,Ejercicio cardiovascular moderado,Obesidad,Principiante,Cardio,Any,
+13,Bicicleta Estática,Ejercicio cardiovascular de bajo impacto,Obesidad,Principiante,Cardio,Any,"Bicicleta Estática"
+18,Natación,Ejercicio de cuerpo completo de bajo impacto,Obesidad,Intermedio,Cardio,Any,Piscina 

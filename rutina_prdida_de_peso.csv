@@ -1,0 +1,4 @@
+id,name,description,imc_range,difficulty,category,gender_specific,equipment_needed
+4,Correr Suave (Trote),Ejercicio cardiovascular de bajo impacto,Sobrepeso,Principiante,Cardio,Any,
+12,Saltos de Tijera (Jumping Jacks),Calentamiento cardiovascular,Sobrepeso,Principiante,Cardio,Any,
+17,Caminata Inclinada,Cardio con mayor intensidad para piernas,Sobrepeso,Intermedio,Cardio,Any,"Cinta de correr" 

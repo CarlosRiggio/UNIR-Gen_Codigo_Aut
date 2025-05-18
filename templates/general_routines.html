@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rutinas Generales por Objetivo</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f4; color: #333; }
+        .container { background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); max-width: 900px; margin: auto; }
+        h1 { text-align: center; color: #333; margin-bottom: 30px;}
+        h2 { color: #007bff; border-bottom: 2px solid #007bff; padding-bottom: 5px; margin-top: 30px;}
+        .routine-section { margin-bottom: 30px; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #e9ecef;
+            color: #495057;
+        }
+        tr:nth-child(even) { background-color: #f8f9fa; }
+        .no-exercises { color: #777; font-style: italic; }
+        a.nav-link { display: inline-block; margin: 20px 0; color: #007bff; text-decoration: none; font-size: 16px; }
+        a.nav-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Rutinas Generales por Objetivo de Entrenamiento</h1>
+        
+        <a href="{{ url_for('render_home_page') }}" class="nav-link">Volver al Inicio</a>
+        <a href="{{ url_for('render_calculator_form') }}" class="nav-link" style="margin-left: 15px;">Calcular Rutina Personalizada</a>
+
+        {% if routines_data %}
+            {% for goal, exercises in routines_data.items() %}
+            <div class="routine-section">
+                <h2>{{ goal }}</h2>
+                {% if exercises %}
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nombre del Ejercicio</th>
+                                <th>Descripción</th>
+                                <th>Categoría</th>
+                                <th>Dificultad</th>
+                                <th>Equipo Necesario</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for ex in exercises %}
+                            <tr>
+                                <td>{{ ex.name }}</td>
+                                <td>{{ ex.description }}</td>
+                                <td>{{ ex.category }}</td>
+                                <td>{{ ex.difficulty }}</td>
+                                <td>
+                                    {% if ex.equipment_needed %}
+                                        {{ ex.equipment_needed | join(', ') }}
+                                    {% else %}
+                                        Ninguno
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                {% else %}
+                    <p class="no-exercises">No hay ejercicios definidos para este objetivo en este momento.</p>
+                {% endif %}
+            </div>
+            {% endfor %}
+        {% else %}
+            <p class="no-exercises">No se encontraron rutinas generales. Es posible que aún no se hayan generado.</p>
+        {% endif %}
+
+    </div>
+</body>
+</html> 

@@ -1,0 +1,6 @@
+id,name,description,imc_range,difficulty,category,gender_specific,equipment_needed
+1,Flexiones de Pecho,Ejercicio de fuerza para el tren superior,Normal,Principiante,Fuerza,Any,
+2,Sentadillas,Ejercicio de fuerza para piernas y glúteos,Normal,Principiante,Fuerza,Any,
+3,Plancha Abdominal,Ejercicio isométrico para el core,Normal,Intermedio,Fuerza,Any,
+8,Zancadas (Lunges),Ejercicio para piernas y glúteos,Normal,Intermedio,Fuerza,Any,
+14,Estiramiento de Isquiotibiales,Estiramiento para la parte posterior de las piernas,Normal,Principiante,Flexibilidad,Any, 

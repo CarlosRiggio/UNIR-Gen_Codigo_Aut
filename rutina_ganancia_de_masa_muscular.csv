@@ -1,0 +1,6 @@
+id,name,description,imc_range,difficulty,category,gender_specific,equipment_needed
+5,Elevaciones Laterales de Hombros,Ejercicio para deltoides,Bajo Peso,Principiante,Fuerza,Any,"Mancuernas Pequeñas"
+6,Curl de Bíceps con Mancuernas,Ejercicio para bíceps,Bajo Peso,Principiante,Fuerza,Any,Mancuernas
+10,Remo con Mancuerna,"Ejercicio de espalda y bíceps",Bajo Peso,Intermedio,Fuerza,Any,"Mancuerna, Banco (opcional)"
+11,Prensa de Hombros con Mancuernas,Ejercicio de hombros,Bajo Peso,Intermedio,Fuerza,Any,Mancuernas
+16,Sentadilla Sumo,"Variación de sentadilla para aductores y glúteos",Bajo Peso,Intermedio,Fuerza,Any,"Pesa Rusa (opcional)" 

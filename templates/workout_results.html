@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de tu Rutina</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f4; color: #333; }
+        .container { background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); max-width: 700px; margin: auto; }
+        h1, h2, h3 { color: #333; }
+        .user-data, .imc-results, .workout-plan { margin-bottom: 20px; padding: 15px; border: 1px solid #eee; border-radius: 5px; }
+        ul { list-style-type: none; padding: 0; }
+        li { background-color: #f9f9f9; margin-bottom: 8px; padding: 10px; border-radius: 4px; }
+        li b { color: #007bff; }
+        a { display: inline-block; margin-top:20px; color: #007bff; text-decoration: none;}
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Resultados de tu Rutina Personalizada</h1>
+
+        {% if user_data %}
+        <div class="user-data">
+            <h2>Tus Datos:</h2>
+            <p><strong>Sexo:</strong> {{ user_data.gender }}</p>
+            <p><strong>Altura:</strong> {{ user_data.height * 100 }} cm</p> {# Convertir de nuevo a cm para mostrar #}
+            <p><strong>Peso:</strong> {{ user_data.weight }} kg</p>
+            <p><strong>Edad:</strong> {{ user_data.age }} años</p>
+        </div>
+        {% endif %}
+
+        {% if imc is defined and imc_category and training_goal %}
+        <div class="imc-results">
+            <h2>Resultados del IMC:</h2>
+            <p><strong>Tu IMC es:</strong> {{ imc }}</p>
+            <p><strong>Categoría de IMC:</strong> {{ imc_category }}</p>
+            <p><strong>Objetivo de Entrenamiento Sugerido:</strong> {{ training_goal }}</p>
+        </div>
+        {% endif %}
+
+        {% if workout_plan %}
+        <div class="workout-plan">
+            <h2>Tu Plan de Entrenamiento:</h2>
+            {{ workout_plan.to_html() | safe }}
+        </div>
+        {% else %}
+        <p>No se pudo generar un plan de entrenamiento con los datos proporcionados o no hay ejercicios disponibles.</p>
+        {% endif %}
+
+        <a href="{{ url_for('render_calculator_form') }}">Calcular otra rutina</a><br>
+        <a href="{{ url_for('render_home_page') }}">Volver al inicio</a>
+    </div>
+</body>
+</html> 
