@@ -16,11 +16,69 @@ Los requisitos a tener en cuenta son:
 - A la hora de la generación de código, se emplearán distintas herramientas de IA generativa, como son Chatgpt, Gemini, Copilot o Claude.
 - Para el desarrollo del código se utilizará el IDE de Visual Studio Code o Cursor, ya que ofrecen herramientas colaborativas y de gran utilidad, como LiveShare o chats integrados directamente con los modelos de IA.. 
 - Para la implementación de la base de datos utilizaremos un archivo CSV.
-## Diagrama de clases
-La estructura que tenemos pensada para el proyecto sería la siguiente:
-- main.py: este será el programa que se ejecutará y llamará al resto de programas para desplegar la interfaz gráfica y las demás funcionalidades del sistema. Como salida imprimirá por terminal la IP y puerto en la que se lanza nuestra web.
-- frontend.py: en este archivo se definen todas las funciones relacionadas con el diseño gráfico de la interfaz gráfica del sistema. 
-- backend.py: en este archivo se define la lógica de nuestro sistema, incluyendo las siguientes funcionalidades:
-- Calculadora de IMC: en base a los datos de sexo, altura, peso y edad introducidos por el usuario, se calcula su IMC.
-- Generación de rutina: a partir del IMC calculado, se extrae de la base de datos de ejercicios aquellos que estén indicados para la finalidad del entrenamiento sugerida por el sistema, como podría ser ganancia de masa muscular, pérdida de peso o mantenimiento. 
-- Base de datos: como base de datos tendremos 1 archivo CSV, donde estarán las descripciones de los ejercicios a hacer en función del rango del IMC obtenido. Cada ejercicio estará etiquetado en función del rango
+## Estructura del proyecto
+El proyecto está organizado de la siguiente manera:
+- `main.py`: punto de entrada principal que ejecuta la aplicación Flask
+- `src/`: directorio principal del código fuente
+  - `app.py`: configuración principal de la aplicación Flask
+  - `config.py`: configuración de la aplicación
+  - `frontend/`: módulo del frontend con controladores web
+  - `backend/`: módulo del backend con la lógica de negocio
+    - `models.py`: clases de dominio (UserData, Exercise, WorkoutPlan)
+    - `calculator.py`: calculadora de IMC
+    - `database.py`: gestor de base de datos CSV
+    - `generator.py`: generador de rutinas de ejercicio
+- `templates/`: plantillas HTML de la interfaz web
+- `data/`: archivos CSV con rutinas de ejercicio
+- `tests/`: suite completa de tests unitarios y de integración
+
+## Instalación y ejecución
+
+### Prerrequisitos
+- Python 3.7 o superior
+- pip (gestor de paquetes de Python)
+
+### Instalación de dependencias
+```bash
+pip install -r requirements.txt
+```
+
+### Ejecución de la aplicación
+Para ejecutar la aplicación web:
+```bash
+python main.py
+```
+
+La aplicación estará disponible en:
+- `http://localhost:5000`
+- `http://127.0.0.1:5000`
+- También se mostrará la IP local de tu red para acceso desde otros dispositivos
+
+### Ejecución de tests
+Para ejecutar todos los tests:
+```bash
+cd tests
+python -m pytest -v
+```
+
+Para ejecutar tests con cobertura:
+```bash
+cd tests
+python -m pytest --cov=src --cov-report=html -v
+```
+
+Para ejecutar un test específico:
+```bash
+cd tests
+python -m pytest test_flask_app.py -v
+```
+
+## Funcionalidades
+- **Calculadora de IMC**: calcula el Índice de Masa Corporal basado en datos del usuario
+- **Generación de rutinas personalizadas**: recomienda ejercicios según el IMC calculado
+- **Interfaz web intuitiva**: formulario fácil de usar para introducir datos
+- **Base de datos de ejercicios**: rutinas específicas para diferentes objetivos:
+  - Ganancia de masa muscular (bajo peso)
+  - Mantenimiento y bienestar general (peso normal)
+  - Pérdida de peso (sobrepeso)
+  - Pérdida de peso progresiva (obesidad)
